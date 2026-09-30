@@ -5,12 +5,17 @@
     <p class="subtitulo">Tareas del curso</p>
   </header>
 
+  <div>
+    <input type="text" #tituloInput />
+    <button (click)="crear(tituloInput.value)">Agregar</button>
+  </div>
   <ul>
     @for (tarea of tareas(); track tarea.id) {
-      <li>
-        <span class="numero">{{ tarea.id }}</span>
-        <span class="titulo">{{ tarea.titulo }}</span>
-      </li>
+
+    <li>
+      <span class="numero">{{ tarea.id }}</span>
+      <span class="titulo">{{ tarea.titulo }}</span>
+    </li>
     }
   </ul>
 </section>

@@ -17,4 +17,9 @@ export class TareasComponent implements OnInit {
       this.tareas.set(tareas);
     });
   }
+  crear(titulo: string) {
+    this.tareasService.crear(titulo).subscribe((tarea) => {
+      this.tareas.update((tareas) => [...tareas, tarea]);
+    });
+  }
 }
