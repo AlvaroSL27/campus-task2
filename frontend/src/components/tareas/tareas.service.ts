@@ -11,4 +11,7 @@ export class TareasService {
   listar(): Observable<Tarea[]> {
     return this.http.get<Tarea[]>(`${this.apiUrl}/tareas`);
   }
+  crear(titulo: string): Observable<Tarea> {
+    return this.http.post<Tarea>(`${this.apiUrl}/tareas`, { titulo });
+  }
 }
